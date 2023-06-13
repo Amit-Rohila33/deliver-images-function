@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deliver-images-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: deliver-images
+  template:
+    metadata:
+      labels:
+        app: deliver-images
+    spec:
+      containers:
+        - name: deliver-images
+          image: your-image-name
+          # sir, you can change the image name from the Dockerfile
+          ports:
+            - containerPort: 8080
+
+
+
+# To deploy the deliver-images-deployment:
+
+# kubectl apply -f deployment.yaml

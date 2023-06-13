@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: deliver-images-service
+spec:
+  selector:
+    app: deliver-images
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+
+      
+# To deploy the deliver-images-service:
+
+# kubectl apply -f service.yaml
